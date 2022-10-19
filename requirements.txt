@@ -1,0 +1,14 @@
+asgiref
+pandas
+numpy
+Django
+sklearn
+scikit-learn
+gunicorn
+joblib
+python-dateutil
+pytz
+scipy
+threadpoolctl
+six
+sqlparse

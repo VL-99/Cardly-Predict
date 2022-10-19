@@ -1,0 +1,219 @@
+<html>
+{% load static %}
+<head>
+
+  <meta charset="UTF-8">
+  <title>Cardly Predict</title>
+
+<style>
+
+div.search {
+  width: 100%;
+  height: 45px;
+
+  display: flex;
+}
+
+input.searchTerm {
+  width: 70%;
+  border: 3px solid black;
+  border-right: none;
+  padding: 5px;
+  height: 45px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 20px;
+}
+
+select.searchTerm {
+  width: 70%;
+  border: 3px solid black;
+  border-right: none;
+  padding: 5px;
+  height: 45px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 20px;
+}
+
+input.searchTerm:focus{
+  color: #00B4CC;
+}
+
+button.searchButton {
+  width: 80px;
+  height: 45px;
+  border: 1px solid #00B4CC;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+div.wrap{
+  width: 60%;
+  position: relative;
+  top: 20%;
+  left: 20%;
+}
+body{
+    background:url('https://previews.123rf.com/images/maxkabakov/maxkabakov1608/maxkabakov160801640/61046352-banking-concept-pixelated-credit-card-icon-on-digital-background-empty-copyspace-for-card-text-adver.jpg')
+}
+
+</style>
+</head>
+<body background="mysite/static/images/bankcard_bg.jpg" style="background-repeat:no-repeat; background-size:100% 100%; background-attachment:fixed">
+<h1 style="color:white; font-size:50px;"><strong>Cardly Predict</strong></h1>
+<h3 style="color:white; font-size:30px;"><strong><em>Enter the details and find out which card will be issued by your bank!</em></strong></h3>
+
+<div class="wrap">
+  <form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="search">
+      <input name="name" type="text" class="searchTerm" placeholder="Customer Name">
+   </div>
+    <br>
+
+    <div class="search">
+      <input name="age" type="text" class="searchTerm" placeholder="Customer age">
+   </div>
+    <br>
+
+    <div class="search">
+      <select name="gender" class="searchTerm">
+        <option selected>Gender</option>
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+    </select>
+   </div>
+   <br>
+
+    <div class="search">
+      <select name="attrite" class="searchTerm">
+        <option selected>Is the customer still a part of Bank?</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select>
+   </div>
+   <br>
+
+      <div class="search">
+      <select name="edu" class="searchTerm">
+        <option selected>Customer Qualification</option>
+        <option value="3">High School</option>
+        <option value="0">College</option>
+        <option value="2">Graduate</option>
+        <option value="4">Post-Graduate</option>
+        <option value="1">Doctorate</option>
+        <option value="5">Uneducated</option>
+        <option value="6">Unknown</option>
+
+    </select>
+   </div>
+   <br>
+
+    <div class="search">
+      <select name="marital" class="searchTerm">
+        <option selected>Marital status</option>
+        <option value="3">Unknown</option>
+        <option value="2">Single</option>
+        <option value="1">Married</option>
+        <option value="0">Divorced</option>
+    </select>
+   </div>
+   <br>
+
+   <div class="search">
+      <select name="income" class="searchTerm">
+        <option selected>Income Margin</option>
+        <option value="3">Less than $40K</option>
+        <option value="1">$40K - $60K</option>
+        <option value="2">$60K - $80K</option>
+        <option value="3">$80K - $120K</option>
+        <option value="0">More than $120K</option>
+        <option value="3">Unknown</option>
+    </select>
+   </div>
+   <br>
+
+    <div class="search">
+      <input name="children" type="text" class="searchTerm" placeholder="Number of children">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="totalRelationshipCount" type="text" class="searchTerm" placeholder="Relationship Count">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="monthOnBooks" type="text" class="searchTerm" placeholder="Number of months on books">
+   </div>
+    <br>
+
+    <div class="search">
+      <input name="monthsInactive12mon" type="text" class="searchTerm" placeholder="Months inactive (1-12)">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="contactsCount12mon" type="text" class="searchTerm" placeholder="Number of contacts (1-10)">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="totalRevolvingBal" type="text" class="searchTerm" placeholder="Total Revolving Balance in account">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="creditLimit" type="text" class="searchTerm" placeholder="Credit Limit">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="avgOpenToBuy" type="text" class="searchTerm" placeholder="Amount open to buy">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="totalTransAmt" type="text" class="searchTerm" placeholder="Total amount transferred">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="totalAmtChngQ4Q1" type="text" class="searchTerm" placeholder="Change in amount from first to fourth quarters">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="totalTransCt" type="text" class="searchTerm" placeholder="Total credit transferred">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="totalCtChngQ4Q1" type="text" class="searchTerm" placeholder="Change in credits from first to fourth quarters">
+   </div>
+    <br>
+
+   <div class="search">
+      <input name="avgUtilizationRatio" type="text" class="searchTerm" placeholder="Utilization Score(0-1)">
+   </div>
+    <br>
+
+      <button type="submit" name="pred_button" class="searchButton"> Submit
+            <i class="fa fa-search"></i>
+      </button>
+   </form>
+   {% if response %}
+      <h2 style="color:white">The suggested card is: {{ response }}!</h2>
+    {% endif %}
+</div>
+
+</body>
+</html>
