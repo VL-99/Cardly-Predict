@@ -4,7 +4,7 @@ from pathlib import Path
 DEBUG = False
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-ALLOWED_HOSTS = ['127.0.0.1', 'card-request.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'cardly-predict-vl-99.herokuapp.com']
 SECRET_KEY = 'euji6@=t!u5@pkg*b%yf4z58t$l2ver(!+=vghyvonkcnldsjz'
 
 # Application
